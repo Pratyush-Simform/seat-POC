@@ -1,22 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
+import CricketGroundSeatPicker from './seat-views/Criket-ground-seat-picker';
+import SeatPickerExample from './seat-views/SeatPicker';
+import AirplaneSeatPicker from './seat-views/airplane-seat-picker';
+import StyleSeatPicker from './seat-views/style-seat-picker';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+       <SeatPickerExample />
+       <CricketGroundSeatPicker />
+       <AirplaneSeatPicker />
+       <StyleSeatPicker />
       </header>
     </div>
   );
