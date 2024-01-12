@@ -27,7 +27,7 @@ const AirplaneSeatPicker = () => {
     // Create a layout for the airplane with rows and columns
     const rows = Array.from({ length: 6 }, (_, rowIndex) => {
       return Array.from({ length: 9 }, (_, colIndex) => {
-        return colIndex === 4
+        return colIndex % 2 === 0
           ? null
           : {
               id: rowIndex * 4 + colIndex + 1,
@@ -48,7 +48,6 @@ const AirplaneSeatPicker = () => {
 
   return (
     <div>
-      <h2>Airplane Seat Picker</h2>
       <SeatPicker
         addSeatCallback={(row, number) =>
           console.log(`Added seat ${row}-${number}`)

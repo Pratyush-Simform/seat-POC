@@ -39,9 +39,10 @@ const CricketGroundSeatPicker = () => {
     return rows;
   };
 
+  const rows = [[[{}], [{}], [{}], null, null, null, null]];
+
   return (
     <div>
-      <h2>Cricket Ground/sports-ground Seat Picker</h2>
       <SeatPicker
         addSeatCallback={(row, number) =>
           console.log(`Added seat ${row}-${number}`)
@@ -60,7 +61,7 @@ const CricketGroundSeatPicker = () => {
         }
         selectedSeatStyle="selected"
         tooltipProps={{ multiline: true }}
-        rows={renderCricketGroundLayout()}
+        rows={rows}
         selectedSeats={selectedSeats}
         onClick={(seat) =>
           handleSeatClick(
