@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <div style={{ display: "grid", gap: "36px", width: "100%" }}>
+         <div style={{ display: "grid", gap: "36px", width: "100%" }}>
           <div style={{ display: "flex", justifyContent: "space-between" }}>
             <SeatPickerExample />
             <div

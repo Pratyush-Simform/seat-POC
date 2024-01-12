@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import SeatPicker from "react-seat-picker";
+import "./styles.css";
 
 const CricketGroundSeatPicker = () => {
   const [selectedSeats, setSelectedSeats] = useState([]);
@@ -39,11 +40,25 @@ const CricketGroundSeatPicker = () => {
     return rows;
   };
 
+  const CustomSeat = ({ selected, disabled, onClick }) => {
+    const seatStyle = {
+      // Add your custom styling here for the seat shape
+      width: "20px",
+      height: "20px",
+      borderRadius: "50%",
+      background: selected ? "red" : disabled ? "gray" : "green",
+      cursor: disabled ? "not-allowed" : "pointer",
+    };
+
+    return <div style={seatStyle} onClick={onClick} />;
+  };
+
   const rows = [[[{}], [{}], [{}], null, null, null, null]];
 
   return (
     <div>
       <SeatPicker
+        style={{ borderRadius: "50%" }}
         addSeatCallback={(row, number) =>
           console.log(`Added seat ${row}-${number}`)
         }
@@ -52,6 +67,7 @@ const CricketGroundSeatPicker = () => {
         }
         selectedByDefault
         visible
+        seatComponent={CustomSeat}
         maxReservableSeats={5}
         alpha
         seatWidth={35}
